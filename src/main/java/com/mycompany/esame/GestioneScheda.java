@@ -35,7 +35,7 @@ public class GestioneScheda {
         String Nascita = JOptionPane.showInputDialog("dimmi la data di nascita");
         annoNascita = Integer.parseInt(Nascita);
         anni = annoCorrente - annoNascita;
-        risultato += nome + " " + cognome + " " + annoNascita + " di anni " + anni + " " + "\n";
+        risultato += nome + " " + cognome + " nato/a nel " + annoNascita + " di anni " + anni + " " + "\n";
 
         if (anni >= fasciaGiovaneMin && anni <= fasciaGiovaneMax) {
             risultato += "tipo:" + "giovane" + "\n";
