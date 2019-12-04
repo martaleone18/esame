@@ -25,32 +25,34 @@ public class GestioneScheda {
         int annoNascita;
         int anni;
         int annoCorrente = 2019;
-        int fasciaGiovane = 0 - 18;
-        int fasciaAdulto = 18 - 60;
-        int fasciaSenior;
+        int fasciaGiovaneMin = 0;
+        int fasciaGiovaneMax = 18;
+        int fasciaAdultoMin = 18;
+        int fasciaAdultoMax = 60;
         String risultato = " ";
         nome = JOptionPane.showInputDialog("dimmi il nome");
         cognome = JOptionPane.showInputDialog("dimmi il cognome");
         String Nascita = JOptionPane.showInputDialog("dimmi la data di nascita");
         annoNascita = Integer.parseInt(Nascita);
         anni = annoCorrente - annoNascita;
-        risultato = " ";
         risultato += nome + " " + cognome + " " + annoNascita + " di anni " + anni + " " + "\n";
 
-        if (anni <= fasciaGiovane) {
+        if (anni >= fasciaGiovaneMin && anni <= fasciaGiovaneMax) {
             risultato += "tipo:" + "giovane" + "\n";
+        } else {
+        }
 
-            if (anni == fasciaAdulto) {
-                risultato += "tipo:" + "adulto" + "\n";
+        if (anni > fasciaAdultoMin && anni <= fasciaAdultoMax) {
+            risultato += "tipo:" + "adulto" + "\n";
 
-            } else {
-                risultato += "tipo" + "senior" + "\n";
-
-            }
-
-            System.out.println(risultato);
+        } else {
+            risultato += "tipo:" + "senior" + "\n";
 
         }
 
+        System.out.println(risultato);
+
     }
+
 }
+
